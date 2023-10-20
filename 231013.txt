@@ -1,0 +1,9 @@
+プログラム１
+#include<stdio.h>
+
+int main(void)
+{
+    printf("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaayakinikukuiteeeeee\n");
+    
+    return 0;
+}
