@@ -1,0 +1,31 @@
+
+
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main(void)
+{
+    char str[100];
+    int aaa,bbb,ccc;
+    printf("文字列を入力してください");
+    fgets(str,sizeof(str),stdin);
+    int lengh=strlen(str);
+    if(8<=lengh && 16>=lengh){
+    for(int i=0;i<=strlen(str);i++){
+     
+         if('a'<=str[i]&&'z'>=str[i])
+             aaa++;}
+    for(int i=0;i<=strlen(str);i++){
+       if('A'<=str[i] && 'Z'>=str[i])
+         bbb++;}
+    
+    for(int i=0;i<=strlen(str);i++){
+        if(isalpha(str)!=1)
+        ccc++;}}
+     if(aaa>=1&&bbb>=1&&ccc>=1)printf("パスワードを設定しました\n");
+
+    else printf("8文字以上16文字以下にしてください\n");
+    return 0;
+    
+}
