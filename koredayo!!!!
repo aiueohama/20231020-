@@ -1,0 +1,96 @@
+#include <stdio.h>
+
+#include <ctype.h>
+
+
+int isAlphanumeric(char c) {
+
+return isalpha(c) ? 1 : 0;
+
+}
+
+
+int isPalindrome(char str[]) {
+
+int i, j;
+
+
+// 文字列の長さを取得
+
+int length = 0;
+
+while (str[length] != '\0') {
+
+length++;
+
+}
+
+
+// 文字列からアルファベット文字だけを取り出して比較
+
+for (i = 0, j = length - 1; i < j;) {
+
+if (isAlphanumeric(str[i]) && isAlphanumeric(str[j])) {
+
+// 大文字小文字を区別せずに比較
+
+if (tolower(str[i]) != tolower(str[j])) {
+
+return 0; // 回文でない場合
+
+}
+
+i++;
+
+j--;
+
+} else {
+
+// アルファベット文字でない場合はスキップ
+
+if (!isAlphanumeric(str[i])) {
+
+i++;
+
+}
+
+if (!isAlphanumeric(str[j])) {
+
+j--;
+
+}
+
+}
+
+}
+
+
+return 1; // 回文である場合
+
+}
+
+
+int main(void) {
+
+char str[100];
+
+
+printf("文字列を入力してください: ");
+
+fgets(str, sizeof(str), stdin);
+
+
+if (isPalindrome(str)) {
+
+printf("回文です\n");
+
+} else {
+
+printf("回文ではありません\n");
+
+}
+
+
+return 0;
+
+}
